@@ -28,3 +28,6 @@ client = <%= @client_on %>
 [<%= @name -%>]
 accept = <%= @accept %>
 connect = <%= @connect %>
+<% if @psk_file -%>
+PSKsecrets = <%= @psk_file %>
+<% end -%>

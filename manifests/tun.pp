@@ -144,7 +144,8 @@ define stunnel::tun(
     $debug_level = '0',
     $log_dest    = "/var/log/${name}.log",
     $conf_dir    = $stunnel::params::conf_dir,
-    $chroot_mode = '0600'
+    $chroot_mode = '0600',
+    $psk_file    = undef,
 ) {
 
   unless $verify == 'default' {
