@@ -28,3 +28,6 @@ client = <%= @client_on %>
 [<%= @name -%>]
 accept = <%= @accept %>
 connect = <%= @connect %>
+<% if @service_cert -%>
+cert = <%= @service_cert %>
+<% end -%>

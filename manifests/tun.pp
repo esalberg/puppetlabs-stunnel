@@ -88,6 +88,10 @@
 #   Note: Should not be writable except by owner.
 #   Default: '0600'
 #
+# [*service_cert*]
+#   Certificate file to specify in the service definition section (optional)
+#   Default: undef 
+#
 # === Examples
 #
 #   Use a cert:
@@ -133,18 +137,19 @@ define stunnel::tun(
     $group,
     $accept,
     $connect,
-    $certificate = undef,
-    $private_key = undef,
-    $ca_file     = undef,
-    $crl_file    = undef,
-    $ssl_version = 'TLSv1',
-    $verify      = '2',
-    $client      = false,
-    $pid_file    = "/${name}.pid",
-    $debug_level = '0',
-    $log_dest    = "/var/log/${name}.log",
-    $conf_dir    = $stunnel::params::conf_dir,
-    $chroot_mode = '0600'
+    $certificate  = undef,
+    $private_key  = undef,
+    $ca_file      = undef,
+    $crl_file     = undef,
+    $ssl_version  = 'TLSv1',
+    $verify       = '2',
+    $client       = false,
+    $pid_file     = "/${name}.pid",
+    $debug_level  = '0',
+    $log_dest     = "/var/log/${name}.log",
+    $conf_dir     = $stunnel::params::conf_dir,
+    $chroot_mode  = '0600',
+    $service_cert = undef,
 ) {
 
   unless $verify == 'default' {
